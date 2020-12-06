@@ -18,8 +18,7 @@ public class SudokuButton extends JButton implements ActionListener {
 
     public void actionPerformed(ActionEvent e){
         String s = getText();
-        int num = Integer.parseInt(s);
-
+        int num = Integer.parseInt(JOptionPane.showInputDialog("1~4"));
         if(1 <= num && num <= 4 ){
             //board 에 숫자입력
 
