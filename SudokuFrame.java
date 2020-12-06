@@ -1,8 +1,3 @@
-package Sudoku;
-
-
-import PuzzleGame.PuzzleButton;
-
 import javax.swing.*;
 import java.awt.*;
 
@@ -31,7 +26,19 @@ public class SudokuFrame extends JFrame {
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     }
 
-    public void update(){
-
+    public void update() {
+        SudokuPiece[][] r = board.contents();
+        for (int i = 0; i < SIZE; i++) {
+            for (int j = 0; j < SIZE; j++) {
+                if(r[i][j].valueOf() != 0) {
+                    button[i][j].setBackground(Color.white);
+                    button[i][j].setText("" + r[i][j].valueOf());
+                }
+                else{
+                    button[i][j].setBackground(Color.white);
+                    button[i][j].setText("");
+                }
+            }
+        }
     }
 }
