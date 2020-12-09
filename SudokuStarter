@@ -1,0 +1,10 @@
+import javax.swing.*;
+
+public class SudokuStarter {
+
+    public static void main(String[] args){
+        int level = Integer.parseInt(JOptionPane.showInputDialog("원하는 난이도의 숫자를 입력하세요\n난이도 하 : 1 \n난이도 중 : 2\n난이도 상 : 3"));
+        SudokuBoard model = new SudokuBoard(level);
+        SudokuFrame view = new SudokuFrame(model);
+    }
+}
