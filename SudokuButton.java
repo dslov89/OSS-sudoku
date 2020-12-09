@@ -1,7 +1,7 @@
-import javax.swing.*;
+import javax.swing.*import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.AdjustmentListener;
+
 
 public class SudokuButton extends JButton implements ActionListener {
 
@@ -10,6 +10,9 @@ public class SudokuButton extends JButton implements ActionListener {
     private int row;
     private int col;
 
+    /** SudokuButton - 컨트롤러
+     *  @param m - 버튼위치의 행
+     *  @param n - 버튼위치의 열*/
     public SudokuButton(SudokuBoard b, SudokuFrame f, int m, int n){
         model = b;
         view = f;
@@ -18,15 +21,17 @@ public class SudokuButton extends JButton implements ActionListener {
         addActionListener(this);
     }
 
+    /** actionPerformed - '버튼 누르기' 액션 이벤트를 처리
+     * @param e - 이벤트  */
     public void actionPerformed(ActionEvent e) {
         String s = getText();
-        if (model.board[row][col].valueOf() == 0) {
-            int num = Integer.parseInt(JOptionPane.showInputDialog("1~4"));
-            if (1 <= num && num <= 4) {
-                //board 에 숫자입력
+        if (model.board[row][col].possible()) {
+            int num = view.getSelection();
+            if (num != 0){
                 model.fill(num, row, col);
                 view.update();
+                }
+
             }
         }
-    }
 }
