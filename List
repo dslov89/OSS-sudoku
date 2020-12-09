@@ -1,0 +1,18 @@
+public class List {
+
+    private int index;
+
+    /** @param i - 리스트의 인덱스 */
+    public List(int i){
+        index = i;
+    }
+
+    public int getIndex(){
+        return index;
+    }
+
+    /** toString - 리스트 위에 쓰여질 문자열 리턴*/
+    public String toString(){
+        return ( index + 1 + "" ) ;
+    }
+}
