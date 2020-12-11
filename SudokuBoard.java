@@ -1,5 +1,4 @@
-import java.util.Random;
-import java.util.SimpleTimeZone;
+import javax.swing*;
 
 public class SudokuBoard {
 
@@ -27,10 +26,12 @@ public class SudokuBoard {
         int hole = 0;
         if (level == 1)
             hole = 6;
-        else if(level == 2)
+        else if (level == 2)
             hole = 8;
-        else
+        else if (level == 3)
             hole = 10;
+        else 
+            JOptionPane.showMessageDialog(null, "ERROR");
 
         int count = 0;
         while (count < hole){
