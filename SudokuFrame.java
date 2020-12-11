@@ -1,5 +1,5 @@
 import javax.swing.*;
-import java.awt.*;
+
 
 public class SudokuFrame extends JFrame {
 
@@ -43,7 +43,7 @@ public class SudokuFrame extends JFrame {
 
         sp.add(ap);
 
-        JLabel label = new JLabel("z");    //라벨 넣음
+        JLabel label = new JLabel("<html>STEP1 : 빈 보드 선택 <br><html>STEP2 : 숫자 선택 <br>STEP3 : 모든 빈 보드 입력 후 OK버튼 누르기");    //라벨 넣음
         sp.add(label);
 
         cp.add(sp);
