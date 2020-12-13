@@ -1,20 +1,22 @@
-import javax.swing*;
+import javax.swing.*;
 
 public class SudokuBoard {
 
     private int SIZE = 4;
     public SudokuPiece[][] board;
     private SudokuPiece[][] right_board;
-    private int level;
+    private String level;
+    private int hole;
 
 
     /**Constructor - SudokuBoard 초기 스도쿠 보드 설치
      * @param l - 스도쿠 난이도*/
-    public SudokuBoard(int l){
+    public SudokuBoard(String l){
         level = l;
         board = new SudokuPiece[SIZE][SIZE];
         right_board = new SudokuPiece[SIZE][SIZE];
-        rightBoard(); //정답보드 생성
+        rightBoard();
+         //정답보드 생성
 
         // board 생성
         for (int i = 0; i < SIZE; i++)
@@ -23,16 +25,20 @@ public class SudokuBoard {
             }
 
         // 난이도대로 board 뚫기
-        int hole = 0;
-        if (level == 1)
-            hole = 6;
-        else if (level == 2)
+        
+  
+        if (level.equals("1"))
+        	hole = 6;
+        else if(level.equals("2"))
             hole = 8;
-        else if (level == 3)
+        else if(level.equals("3"))
             hole = 10;
-        else 
-            JOptionPane.showMessageDialog(null, "ERROR");
-
+        else {
+        	JOptionPane.showMessageDialog(null, "ERROR : 제대로 입력 해주세요.");
+        	System.exit(0);
+         	
+        }
+        
         int count = 0;
         while (count < hole){
             int a = (int)(Math.random() * SIZE);
@@ -46,8 +52,12 @@ public class SudokuBoard {
 
 
         }
-
-    }
+     
+       
+       
+   }
+    
+    
     /** rightBoard - 정답보드 만들기 */  //모르겠음
     public void rightBoard() {
         for (int i = 0; i < SIZE; i++){
