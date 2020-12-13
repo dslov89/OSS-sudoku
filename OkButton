@@ -1,18 +1,13 @@
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 
 public class OkButton extends JButton implements ActionListener {
 
-    private SudokuFrame frame;
-    private SudokuBoard board;
     private SudokuPiece[][] correct;
     private SudokuPiece[][] arr;
 
     /** OkButton - 종료 컨트롤러 */
     public OkButton(SudokuFrame f, SudokuBoard b){
-       frame = f;
-       board = b;
        correct = b.contents();
        arr = b.user_contents();
     }
