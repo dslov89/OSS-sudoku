@@ -1,5 +1,3 @@
-
-
 public class SudokuPiece {
 
     private int face_value;
