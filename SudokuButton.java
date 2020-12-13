@@ -1,7 +1,5 @@
-import javax.swing.*import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
+import javax.swing.*
+import java.awt.event.*;
 
 public class SudokuButton extends JButton implements ActionListener {
 
